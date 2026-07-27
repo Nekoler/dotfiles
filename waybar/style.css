@@ -1,0 +1,5 @@
+* {
+	text-shadow: +1px +1px 1px black,+1px -1px 1px black,-1px +1px 1px black,-1px -1px 1px black,;
+	font-family: "monospace";
+	font-size: 108px;
+}
