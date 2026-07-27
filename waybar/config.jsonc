@@ -26,7 +26,9 @@
     },
     "network": {
         "format-wifi": "{bandwidthUpBytesCompact}/s{:%n}{bandwidthDownBytesCompact}/s",
-        "format-disconnected": "󰈂"
+        "format-disconnected": "󰈂",
+        "on-click-middle": "exec wezterm start --cwd . -- nmtui",
+        "on-click-right": "exec wezterm start --cwd . -- bluetui"
     },
     "tray": {
         "icon-size": 18,
@@ -62,7 +64,7 @@
             "mode-mon-col": 3,
             "first-day-of-week": 0,
             "format": {
-                "today": "<span color='#ffffff'><u>{}</u></span>"
+                "today": "<u><b>{}</b></u>"
             }
         }
     }

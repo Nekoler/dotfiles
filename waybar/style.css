@@ -1,5 +1,14 @@
 * {
 	text-shadow: +1px +1px 1px black,+1px -1px 1px black,-1px +1px 1px black,-1px -1px 1px black,;
 	font-family: "monospace";
+	background: transparent;
 	font-size: 108px;
+	color: white;
+}
+#network {
+	font-size: 54px;
+}
+#workspaces button.active {
+	color: black;
+	background-color: yellowgreen;
 }
