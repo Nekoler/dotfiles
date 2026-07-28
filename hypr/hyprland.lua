@@ -5,10 +5,15 @@ hl.config({
     },
 })
 hl.config({
+    xwayland = {
+        force_zero_scaling = true
+    }
+})
+hl.config({
     general = {
         gaps_in          = 2,
         col              = {
-            active_border   = '#08FFFFFF',
+            active_border   = '#007F7FFF',
             inactive_border = '#808080FF',
         },
         allow_tearing    = true,
@@ -64,7 +69,9 @@ hl.monitor({
 hl.on('hyprland.start', function()
     hl.exec_raw('exec waybar')
     hl.exec_raw('exec hyprpaper')
+    hl.exec_raw('exec mako')
     hl.exec_raw('exec /usr/libexec/fcitx5-wayland-launcher --reopen')
+    hl.exec_raw('exec wl-paste --watch cliphist store')
 end)
 -- Env
 hl.env('XCURSOR_SIZE', '24')
@@ -115,13 +122,14 @@ hl.bind('SUPER + R', hl.dsp.exec_raw(menu))
 hl.bind('SUPER + T', hl.dsp.exec_raw(terminal))
 hl.bind('SUPER + L', hl.dsp.exec_raw('exec hyprshutdown', { long_press = true }))
 
-hl.bind('Print', hl.dsp.exec_raw('slurp|grim -g - -|wl-copy'))
-hl.bind('Print', hl.dsp.exec_raw('grim -|wl-copy'), { long_press = true })
-hl.bind('XF86AudioRaiseVolume', hl.dsp.exec_raw('exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+'), { repeating = true })
-hl.bind('XF86AudioLowerVolume', hl.dsp.exec_raw('exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-'), { repeating = true })
+hl.bind('PRINT', hl.dsp.exec_raw('slurp | grim -g - - | wl-copy'))
+hl.bind('PRINT', hl.dsp.exec_raw('grim -|wl-copy'), { long_press = true })
+hl.bind('SUPER + V', hl.dsp.exec_raw('cliphist list | wofi --dmenu | cliphist decode | wl-copy'))
+hl.bind('XF86AudioRaiseVolume', hl.dsp.exec_raw('exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+'), { repeating = true })
+hl.bind('XF86AudioLowerVolume', hl.dsp.exec_raw('exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-'), { repeating = true })
 hl.bind('XF86AudioMute', hl.dsp.exec_raw('exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'))
-hl.bind('SUPER + XF86AudioRaiseVolume', hl.dsp.exec_raw('exec brightnessctl set 1%+'), { repeating = true })
-hl.bind('SUPER + XF86AudioLowerVolume', hl.dsp.exec_raw('exec brightnessctl set 1%-'), { repeating = true })
+hl.bind('SUPER + XF86AudioRaiseVolume', hl.dsp.exec_raw('exec brightnessctl set 2%+'), { repeating = true })
+hl.bind('SUPER + XF86AudioLowerVolume', hl.dsp.exec_raw('exec brightnessctl set 2%-'), { repeating = true })
 
 hl.bind('SUPER + up', hl.dsp.focus({ direction = 'up' }))
 hl.bind('SUPER + down', hl.dsp.focus({ direction = 'down' }))

@@ -5,7 +5,9 @@
         "hyprland/workspaces",
         "taskbar"
     ],
-    "modules-center": [],
+    "modules-center": [
+        "hyprland/window"
+    ],
     "modules-right": [
         "network",
         "tray",
