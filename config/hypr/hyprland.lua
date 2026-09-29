@@ -68,6 +68,7 @@ hl.monitor({
 -- Autostart
 hl.on('hyprland.start', function()
     hl.exec_raw('exec fcitx5 --replace')
+    hl.exec_raw('exec hypridle')
     hl.exec_raw('exec hyprpaper')
     hl.exec_raw('exec mako')
     hl.exec_raw('exec swayosd-server')

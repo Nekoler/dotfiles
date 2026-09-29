@@ -33,7 +33,7 @@
         "tooltip-format-connected": "{num_connections} Connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}",
         "tooltip-format-enumerate-connected-battery": "{device_alias:<20.15}{device_battery_percentage:>3}%",
-        "on-click-middle": "exec wezterm -e bluetui"
+        "on-click-middle": "exec wezterm start --cwd . -- bluetui"
     },
     "network": {
         "format": "{icon}",
@@ -47,7 +47,7 @@
                 "󰢾"
             ]
         },
-        "on-click-middle": "exec wezterm -e nmtui",
+        "on-click-middle": "exec wezterm start --cwd . -- nmtui",
         "tooltip-format": "{bandwidthUpBytes}\n{bandwidthDownBytes}",
         "tooltip-format-disconnected": "Disconnected"
     },
