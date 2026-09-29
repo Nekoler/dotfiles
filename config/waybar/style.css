@@ -1,0 +1,38 @@
+* {
+	border: 0px;
+	border-radius: 0px;
+	padding: 0px;
+	outline: 30px;
+	font-family: Noto Mono, Symbols Nerd Font Mono;
+}
+
+tooltip {
+	background: none;
+}
+
+tooltip label {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+label.module {
+	padding: 0em 0.2em;
+	text-shadow: +1px +1px 1px black, +1px -1px 1px black, -1px +1px 1px black, -1px -1px 1px black;
+
+}
+
+window#waybar {
+	background: transparent;
+	font-size: 30px;
+	color: white;
+}
+
+#clock {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+
+#workspaces button.active {
+	color: black;
+	background-color: yellowgreen;
+}

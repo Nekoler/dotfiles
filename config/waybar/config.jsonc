@@ -1,0 +1,117 @@
+{
+    "mode": "dock",
+    "modules-left": [
+        "hyprland/workspaces",
+        "taskbar"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "tray",
+        "bluetooth",
+        "network",
+        "battery",
+        "wireplumber",
+        "backlight",
+        "clock"
+    ],
+    "hyprland/workspaces": {
+        "spacing": 16
+    },
+    "taskbar": {
+        "format": "{icon}",
+        "spacing": 3,
+        "tooltip-format": "{title}"
+    },
+    "bluetooth": {
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "format-on": "󰂯",
+        "format-connected": "󰂱",
+        "tooltip-format": "Status {status}",
+        "tooltip-format-connected": "{num_connections} Connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias:<20.15}{device_battery_percentage:>3}%",
+        "on-click-middle": "exec wezterm -e bluetui"
+    },
+    "network": {
+        "format": "{icon}",
+        "format-ethernet": "󰈁",
+        "format-disconnected": "󰈂",
+        "format-icons": {
+            "wifi": [
+                "󰢿",
+                "󰢼",
+                "󰢽",
+                "󰢾"
+            ]
+        },
+        "on-click-middle": "exec wezterm -e nmtui",
+        "tooltip-format": "{bandwidthUpBytes}\n{bandwidthDownBytes}",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+    "tray": {
+        "icon-size": 36,
+        "spacing": 0
+    },
+    "battery": {
+        "format": "{icon}{capacity:0>2}%",
+        "format-plugged": "󱐥{capacity:0>2}%",
+        "format-icons": {
+            "default": [
+                "󰠈",
+                "󰠉",
+                "󰠊",
+                "󰠋",
+                "󰠌",
+                "󰠍",
+                "󰠎",
+                "󰠏",
+                "󰠐",
+                "󰠇"
+            ],
+            "charging": [
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ]
+        }
+    },
+    "wireplumber": {
+        "format": "󰕾{volume:0>2}%",
+        "format-muted": "󰖁{volume:0>2}%",
+        "on-scroll-up": "exec wpctl set-volume --limit=1.0 @DEFAULT_AUDIO_SINK@ 1%+",
+        "on-scroll-down": "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
+        "on-click-middle": "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+    "backlight": {
+        "format": "{percent:0>2}%",
+        "on-scroll-up": "exec brightnessctl set 1%+",
+        "on-scroll-down": "exec brightnessctl set --min-value=1 1%-"
+    },
+    "clock": {
+        "format": "  {:%H:%M\n%Y-%m-%d}",
+        "tooltip-format": "{calendar}",
+        "locale": "C",
+        "actions": {
+            "on-scroll-up": "shift_down",
+            "on-scroll-down": "shift_up",
+            "on-click-middle": "shift_reset"
+        },
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "format": {
+                "today": "<span color='#ffff00'><b>{}</b></span>"
+            }
+        }
+    }
+}
