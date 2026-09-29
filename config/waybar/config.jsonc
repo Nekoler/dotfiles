@@ -88,14 +88,14 @@
     "wireplumber": {
         "format": "󰕾{volume:0>2}%",
         "format-muted": "󰖁{volume:0>2}%",
-        "on-scroll-up": "exec wpctl set-volume --limit=1.0 @DEFAULT_AUDIO_SINK@ 1%+",
-        "on-scroll-down": "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
-        "on-click-middle": "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "on-scroll-up": "exec swayosd-client --output-volume=+1",
+        "on-scroll-down": "exec swayosd-client --output-volume=-1",
+        "on-click-middle": "exec swayosd-client --output-volume=mute-toggle"
     },
     "backlight": {
         "format": "{percent:0>2}%",
-        "on-scroll-up": "exec brightnessctl set 1%+",
-        "on-scroll-down": "exec brightnessctl set --min-value=1 1%-"
+        "on-scroll-up": "exec swayosd-client --brightness=+1",
+        "on-scroll-down": "exec swayosd-client --brightness=-1"
     },
     "clock": {
         "format": "  {:%H:%M\n%Y-%m-%d}",
