@@ -37,7 +37,7 @@ paste_items = ['ctrl+v']
 permanently_delete_items = ['shift+delete']
 
 #Archive Manipulation
-compress_file = ['ctrl+a']
+compress_file = ['ctrl+z']
 extract_file = ['ctrl+e']
 
 #Editor Actions
@@ -47,13 +47,13 @@ open_file_with_editor = ['e']
 #Other Actions
 change_panel_mode = ['v']
 copy_path = ['ctrl+p']
-copy_present_working_directory = ['c']
+copy_present_working_directory = ['C']
 open_command_line = [':']
 open_help_menu = ['?']
 open_spf_prompt = ['>']
 open_zoxide = ['z']
 toggle_dot_file = ['.']
-toggle_footer = ['F']
+toggle_footer = ['f']
 
 #Typing hotkeys
 confirm_typing = ['enter']
