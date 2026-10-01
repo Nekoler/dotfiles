@@ -11,14 +11,15 @@ hl.config({
 })
 hl.config({
     general = {
-        gaps_in          = 2,
+        gaps_in          = 0,
+        gaps_out         = 0,
         col              = {
             active_border   = '#007F7FFF',
             inactive_border = '#808080FF',
         },
         allow_tearing    = true,
         resize_on_border = true,
-        layout           = 'dwindle',
+        layout           = 'scrolling',
     },
 })
 hl.config({
@@ -36,11 +37,7 @@ hl.config({
         enabled = true,
     },
 })
-hl.config({
-    dwindle = {
-        preserve_split = true,
-    },
-})
+
 hl.config({
     misc = {
         force_default_wallpaper = -1,
@@ -51,10 +48,9 @@ hl.config({
 
 hl.config({
     input = {
-        kb_layout   = 'us',
-        sensitivity = 0,
-        touchpad    = {
-            natural_scroll = false,
+        numlock_by_default = true,
+        touchpad           = {
+            natural_scroll = true,
         },
     },
 })
@@ -63,17 +59,17 @@ hl.monitor({
     output   = '',
     mode     = '2560x1440@60',
     position = 'auto',
-    scale    = '1.5',
+    scale    = 'auto',
 })
 -- Autostart
 hl.on('hyprland.start', function()
-    hl.exec_raw('exec fcitx5 --replace')
-    hl.exec_raw('exec hypridle')
-    hl.exec_raw('exec hyprpaper')
-    hl.exec_raw('exec mako')
-    hl.exec_raw('exec swayosd-server')
-    hl.exec_raw('exec waybar')
-    hl.exec_raw('exec wl-paste --watch cliphist store')
+    hl.exec_cmd('exec fcitx5 --replace')
+    hl.exec_cmd('exec hypridle')
+    hl.exec_cmd('exec hyprpaper')
+    hl.exec_cmd('exec mako')
+    hl.exec_cmd('exec swayosd-server')
+    hl.exec_cmd('exec waybar')
+    hl.exec_cmd('exec wl-paste --watch cliphist store')
 end)
 -- Env
 hl.env('XCURSOR_SIZE', '24')
@@ -113,8 +109,8 @@ hl.gesture({
     action = 'workspace'
 })
 -- Bind
-local terminal    = 'exec wezterm start --cwd .'
-local fileManager = 'exec wezterm start --cwd . -- spf'
+local terminal    = 'exec kitty'
+local fileManager = 'exec kitty -e spf'
 local menu        = 'exec wofi'
 local browser     = 'exec chromium'
 

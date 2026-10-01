@@ -2,7 +2,7 @@
     "mode": "dock",
     "modules-left": [
         "hyprland/workspaces",
-        "taskbar"
+        "wlr/taskbar"
     ],
     "modules-center": [
         "hyprland/window"
@@ -19,7 +19,7 @@
     "hyprland/workspaces": {
         "spacing": 16
     },
-    "taskbar": {
+    "wlr/taskbar": {
         "format": "{icon}",
         "spacing": 3,
         "tooltip-format": "{title}"
@@ -33,7 +33,7 @@
         "tooltip-format-connected": "{num_connections} Connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}",
         "tooltip-format-enumerate-connected-battery": "{device_alias:<20.15}{device_battery_percentage:>3}%",
-        "on-click-middle": "exec wezterm start --cwd . -- bluetui"
+        "on-click-middle": "exec kitty -e bluetui"
     },
     "network": {
         "format": "{icon}",
@@ -47,7 +47,7 @@
                 "󰢾"
             ]
         },
-        "on-click-middle": "exec wezterm start --cwd . -- nmtui",
+        "on-click-middle": "exec kitty -e nmtui",
         "tooltip-format": "{bandwidthUpBytes}\n{bandwidthDownBytes}",
         "tooltip-format-disconnected": "Disconnected"
     },

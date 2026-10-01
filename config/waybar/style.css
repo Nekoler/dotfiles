@@ -2,8 +2,8 @@
 	border: 0px;
 	border-radius: 0px;
 	padding: 0px;
-	outline: 30px;
-	font-family: Noto Mono, Symbols Nerd Font Mono;
+	outline: 0px;
+	font-family: monospace;
 }
 
 tooltip {
@@ -22,12 +22,12 @@ label.module {
 
 window#waybar {
 	background: transparent;
-	font-size: 30px;
+	font-size: 20px;
 	color: white;
 }
 
 #clock {
-	font-size: 15px;
+	font-size: 10px;
 	font-weight: bold;
 }
 
