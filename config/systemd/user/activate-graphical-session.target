@@ -1,0 +1,5 @@
+[Unit]
+Description=Session of Wayland compositor
+BindsTo=graphical-session.target
+Before=graphical-session.target
+StopWhenUnneeded=yes

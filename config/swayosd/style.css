@@ -1,16 +1,17 @@
 window#osd {
   border-radius: 0px;
-  border: none;
-  background: rgba(255, 255, 255, 0.5);
+  border: 100px;
+  background: rgba(0, 0, 0, 0.6);
+  font-family: monospace;
 }
 
 window#osd #container {
-  margin: 0px;
+  margin: 5px;
 }
 
 window#osd image,
 window#osd label {
-  color: black;
+  color: white;
 }
 
 window#osd progressbar:disabled,
@@ -20,7 +21,7 @@ window#osd image:disabled {
 
 window#osd progressbar,
 window#osd segmentedprogress {
-  min-height: 6px;
+  min-height: 5px;
   border-radius: 999px;
   background: transparent;
   border: none;
@@ -39,13 +40,13 @@ window#osd segment.active {
   min-height: inherit;
   border-radius: inherit;
   border: none;
-  background: green;
+  background: white;
 }
 
 window#osd segment {
-  margin-left: 8px;
+  margin-left: 0px;
 }
 
 window#osd segment:first-child {
-  margin-left: 0;
+  margin-left: 0px;
 }

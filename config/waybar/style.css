@@ -22,12 +22,12 @@ label.module {
 
 window#waybar {
 	background: transparent;
-	font-size: 20px;
+	font-size: 24px;
 	color: white;
 }
 
 #clock {
-	font-size: 10px;
+	font-size: 12px;
 	font-weight: bold;
 }
 

@@ -22,7 +22,9 @@
     "wlr/taskbar": {
         "format": "{icon}",
         "spacing": 3,
-        "tooltip-format": "{title}"
+        "tooltip-format": "{title}",
+        "on-click" : "activate",
+        "on-click-right" : "maximize"
     },
     "bluetooth": {
         "format-disabled": "󰂲",
@@ -52,7 +54,7 @@
         "tooltip-format-disconnected": "Disconnected"
     },
     "tray": {
-        "icon-size": 36,
+        "icon-size": 32,
         "spacing": 0
     },
     "battery": {

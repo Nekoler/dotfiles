@@ -1,5 +1,5 @@
-editor = "exec nvim"
-dir_editor = "exec nvim"
+editor = "nvim"
+dir_editor = "kitty"
 auto_check_update = false
 cd_on_quit = false
 default_open_file_preview = false
@@ -39,9 +39,6 @@ metadata = false
 enable_md5_checksum = false
 zoxide_support = false
 [open_with]
-conf = "exec nvim"
-toml = "exec nvim"
-desktop = "exec xdg-open"
-pdf = "exec xdg-open"
-png = "exec xdg-open"
-sh = "exec nvim"
+conf = "nvim"
+toml = "nvim"
+sh = "nvim"

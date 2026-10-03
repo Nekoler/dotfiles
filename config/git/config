@@ -1,10 +1,11 @@
 [user]
-    name = Nekoler
     email = 2697446335@qq.com
+    name = Nekoler
 [core]
-    autocrlf = true
-    quotepath = false
+    autocrlf = input
     filemode = false
+    quotepath = false
+    symlinks = true
 [safe]
     directory = *
 [http]
