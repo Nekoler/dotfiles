@@ -1,7 +1,8 @@
 {
     "mode": "dock",
     "modules-left": [
-        "hyprland/workspaces",
+        "clock",
+        "ext/workspaces",
         "wlr/taskbar"
     ],
     "modules-center": [
@@ -13,18 +14,23 @@
         "network",
         "battery",
         "wireplumber",
-        "backlight",
-        "clock"
+        "backlight"
     ],
-    "hyprland/workspaces": {
-        "spacing": 16
+    "hyprland/window":{
+        "icon":true,
+        "icon-size":30
+    },
+    "ext/workspaces": {
+        "spacing": 16,
+        "on-click":"activate"
     },
     "wlr/taskbar": {
         "format": "{icon}",
         "spacing": 3,
+        "icon-size":30,
         "tooltip-format": "{title}",
-        "on-click" : "activate",
-        "on-click-right" : "maximize"
+        "on-click": "activate",
+        "on-click-right": "maximize"
     },
     "bluetooth": {
         "format-disabled": "󰂲",
@@ -54,7 +60,7 @@
         "tooltip-format-disconnected": "Disconnected"
     },
     "tray": {
-        "icon-size": 32,
+        "icon-size": 30,
         "spacing": 0
     },
     "battery": {

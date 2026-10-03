@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/sh
 for deb in $(apt-mark showmanual); do
 	rdepends=$(apt-cache rdepends \
 		--installed --no-recommends \

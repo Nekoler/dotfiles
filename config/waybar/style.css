@@ -2,7 +2,6 @@
 	border: 0px;
 	border-radius: 0px;
 	padding: 0px;
-	outline: 0px;
 	font-family: monospace;
 }
 
@@ -22,15 +21,18 @@ label.module {
 
 window#waybar {
 	background: transparent;
-	font-size: 24px;
+	font-size: 26px;
 	color: white;
 }
 
 #clock {
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: bold;
 }
 
+#taskbar button.active {
+	background: rgba(255, 255, 255, 0.5);
+}
 
 #workspaces button.active {
 	color: black;

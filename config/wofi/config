@@ -1,5 +1,6 @@
 allow_images=true
 allow_markup=true
-show_all=false
+dmenu-sort_order=default
+drun-sort_order=alphabetical
 show=drun
-sort_order=alphabetical
+no_actions=true

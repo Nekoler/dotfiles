@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/sh
 Selection=true
 . /etc/profile
 . ${HOME}/.profile

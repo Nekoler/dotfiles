@@ -1,23 +1,26 @@
-#!/bin/sh
-output=$(hyprland-dialog --title "Power Control" \
-	--text "Select an Operation" \
-	--buttons Suspend \
-	--buttons Poweroff \
-	--buttons Reboot \
-	--buttons Cancel)
+#!/usr/bin/sh
+output=$(
+	hyprland-dialog --title "Power Control" \
+		--text "Select an Operation" \
+		--buttons Reboot \
+		--buttons Poweroff \
+		--buttons Suspend \
+		--buttons Logout \
+		--buttons Cancel
+)
 case "${output}" in
-"Suspend")
-	systemctl suspend
-	exit
+"Reboot")
+	hyprshutdown
+	exec systemctl reboot
 	;;
 "Poweroff")
 	hyprshutdown
-	systemctl poweroff
-	exit
+	exec systemctl poweroff
 	;;
-"Reboot")
-	hyprshutdown
-	systemctl reboot
-	exit
+"Suspend")
+	exec systemctl suspend
+	;;
+"Logout")
+	exec hyprshutdown
 	;;
 esac

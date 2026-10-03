@@ -69,6 +69,7 @@ hl.monitor({
 -- Autostart
 hl.on('hyprland.start', function()
     hl.exec_cmd('exec fcitx5 --replace')
+    hl.exec_cmd('exec hyprctl plugin load ${HOME}/.local/share/hypr/scrolloverview.so')
     hl.exec_cmd('exec swayosd-server')
     hl.exec_cmd('exec systemctl --user start activate-graphical-session.target')
     hl.exec_cmd('exec wl-paste --watch cliphist store')
@@ -80,6 +81,7 @@ hl.env('HYPRCURSOR_THEME', 'rose-pine-hyprcursor')
 -- Permission
 hl.permission({ binary = '/usr/.+/grim', type = 'screencopy', mode = 'allow' })
 hl.permission({ binary = '/usr/.+/hyprpicker', type = 'screencopy', mode = 'allow' })
+hl.permission({ binary = '/usr/.+/hyprctl', type = 'plugin', mode = 'allow' })
 hl.permission({ binary = '/usr/.+/xdg-desktop-portal-.+', type = 'screencopy', mode = 'allow' })
 -- Animation
 hl.curve('SpeedUpDown', { type = 'bezier', points = { { 0.8, 0 }, { 0, 0.8 } } })
@@ -119,7 +121,7 @@ hl.bind('SUPER + r', hl.dsp.exec_raw('exec wofi'))
 hl.bind('SUPER + t', hl.dsp.exec_raw('exec kitty'))
 
 hl.bind('Print', hl.dsp.exec_raw('slurp | grim -g - - | wl-copy'))
-hl.bind('SUPER + v', hl.dsp.exec_raw('cliphist list | wofi --dmenu | cliphist decode | wl-copy'))
+hl.bind('SUPER + c', hl.dsp.exec_raw('cliphist list | wofi --dmenu | cliphist decode | wl-copy'))
 hl.bind('SUPER + XF86AudioLowerVolume', hl.dsp.exec_raw('exec swayosd-client --brightness=-1'), { repeating = true })
 hl.bind('SUPER + XF86AudioRaiseVolume', hl.dsp.exec_raw('exec swayosd-client --brightness=+1'), { repeating = true })
 hl.bind('XF86AudioLowerVolume', hl.dsp.exec_raw('exec swayosd-client --output-volume=-1'), { repeating = true })
@@ -145,6 +147,23 @@ for i = 0, 10 do
     hl.bind('SUPER + ' .. key, hl.dsp.focus({ workspace = i }))
     hl.bind('SUPER + SHIFT + ' .. key, hl.dsp.window.move({ workspace = i }))
 end
+-- Plugin
+hl.config({
+    plugin = {
+        scrolloverview = {
+            workspace_gap = 10,
+            layout = "vertical",
+            wallpaper = 0,
+            blur = false,
+            shadow = {
+                enabled = false,
+            }
+        }
+    }
+})
+hl.bind("SUPER + v", function()
+    hl.plugin.scrolloverview.overview("toggle all")
+end)
 -- Rule
 hl.window_rule({
     name     = 'fix-xwayland-drags',

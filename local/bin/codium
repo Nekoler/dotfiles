@@ -1,2 +1,2 @@
-#!/bin/sh
+#!/usr/bin/sh
 exec /usr/share/codium/codium --user-data-dir=${HOME}/.local/share/codium/user "$@"
