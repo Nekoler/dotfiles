@@ -7,23 +7,22 @@
     "editor.minimap.enabled": false,
     "editor.suggest.preview": true,
     "files.insertFinalNewline": true,
-    "fiveServer.host": "localhost",
     "hediet.vscode-drawio.appearance": "automatic",
     "hediet.vscode-drawio.theme": "kennedy",
     "security.workspace.trust.enabled": false,
     "terminal.integrated.cwd": "${fileDirname}",
     "tinymist.preview.invertColors": "auto",
-    "tinymist.systemFonts": false,
+    "tinymist.previewer": "myriad-dreamin.tinymist-gpu-viewer",
     "update.mode": "none",
     "update.showReleaseNotes": false,
     "vscode-hanzi-counter.template.tooltipTemplateName": "zh-hans",
     "workbench.browser.showInTitleBar": true,
     "workbench.commandPalette.history": 0,
     "workbench.startupEditor": "none",
+    "editor.unicodeHighlight.allowedLocales": {
+        "zh-hans": true
+    },
     "workbench.colorCustomizations": {
         "editorCursor.foreground": "#ffffff"
     },
-    "editor.unicodeHighlight.allowedLocales": {
-        "zh-hans": true
-    }
 }

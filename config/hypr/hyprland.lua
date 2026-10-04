@@ -117,7 +117,7 @@ hl.gesture({
 -- Bind
 hl.bind('SUPER + e', hl.dsp.exec_raw('exec kitty -e spf'))
 hl.bind('SUPER + l', hl.dsp.exec_raw('exec ${HOME}/.config/hypr/power.sh'), { long_press = true })
-hl.bind('SUPER + r', hl.dsp.exec_raw('exec wofi --sort-order alphabetical'))
+hl.bind('SUPER + r', hl.dsp.exec_raw('exec wofi'))
 hl.bind('SUPER + t', hl.dsp.exec_raw('exec kitty'))
 
 hl.bind('Print', hl.dsp.exec_raw('slurp | grim -g - - | wl-copy'))

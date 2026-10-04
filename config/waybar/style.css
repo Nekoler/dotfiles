@@ -29,7 +29,11 @@ label.module#bluetooth {
 	padding: 0em 0em 0em 0.1em
 }
 
-window#waybar {
+#window {
+	font-size: 24px;
+}
+
+#waybar {
 	color: white;
 	font-size: 26px;
 	background: transparent;

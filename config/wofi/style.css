@@ -1,3 +1,14 @@
-* {
-    font-family: sans-serif;
+#window {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#input {
+    border-radius: 0px;
+    background: transparent;
+    padding: 5px;
+    color: white;
+}
+
+#text {
+    color: white;
 }
