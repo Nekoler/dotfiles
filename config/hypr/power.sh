@@ -10,12 +10,10 @@ output=$(
 )
 case "${output}" in
 "Reboot")
-	hyprshutdown --no-exit
-	exec systemctl reboot
+	exec hyprshutdown --post-cmd "systemctl reboot"
 	;;
 "Poweroff")
-	hyprshutdown --no-exit
-	exec systemctl poweroff
+	exec hyprshutdown --post-cmd "systemctl poweroff"
 	;;
 "Suspend")
 	exec systemctl suspend
