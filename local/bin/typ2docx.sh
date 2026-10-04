@@ -3,4 +3,4 @@ option=initial.typ --output=initial.docx --citeproc --bibliography=Bibliography.
 if [ -e reference.docx]; then
 	option=${option} --reference-doc=reference.docx
 fi
-pandoc ${option}
+exec pandoc ${option}

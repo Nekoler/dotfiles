@@ -46,8 +46,8 @@ open_file_with_editor = ['e']
 
 #Other Actions
 change_panel_mode = ['v']
-copy_path = ['ctrl+p']
-copy_present_working_directory = ['C']
+copy_path = ['ctrl+y']
+copy_present_working_directory = ['Y']
 open_command_line = [':']
 open_help_menu = ['?']
 open_spf_prompt = ['>']

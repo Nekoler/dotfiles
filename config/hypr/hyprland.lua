@@ -121,7 +121,7 @@ hl.bind('SUPER + r', hl.dsp.exec_raw('exec wofi'))
 hl.bind('SUPER + t', hl.dsp.exec_raw('exec kitty'))
 
 hl.bind('Print', hl.dsp.exec_raw('slurp | grim -g - - | wl-copy'))
-hl.bind('SUPER + c', hl.dsp.exec_raw('cliphist list | wofi --dmenu | cliphist decode | wl-copy'))
+hl.bind('SUPER + c', hl.dsp.exec_raw('exec ${HOME}/.config/hypr/clipboard.sh'))
 hl.bind('SUPER + XF86AudioLowerVolume', hl.dsp.exec_raw('exec swayosd-client --brightness=-1'), { repeating = true })
 hl.bind('SUPER + XF86AudioRaiseVolume', hl.dsp.exec_raw('exec swayosd-client --brightness=+1'), { repeating = true })
 hl.bind('XF86AudioLowerVolume', hl.dsp.exec_raw('exec swayosd-client --output-volume=-1'), { repeating = true })

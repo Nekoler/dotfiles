@@ -1,52 +1,97 @@
 {
+    "backlight": {
+        "format": "{percent:0>2}%",
+        "on-scroll-down": "exec swayosd-client --brightness=-1",
+        "on-scroll-up": "exec swayosd-client --brightness=+1"
+    },
+    "battery": {
+        "format": "{icon}{capacity:0>2}%",
+        "format-icons": {
+            "charging": [
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ],
+            "default": [
+                "󰠈",
+                "󰠉",
+                "󰠊",
+                "󰠋",
+                "󰠌",
+                "󰠍",
+                "󰠎",
+                "󰠏",
+                "󰠐",
+                "󰠇"
+            ]
+        },
+        "format-plugged": "󱐥{capacity:0>2}%"
+    },
+    "bluetooth": {
+        "format-connected": "󰂱",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "format-on": "󰂯",
+        "on-click-middle": "exec kitty -e bluetui",
+        "tooltip-format": "Status {status}",
+        "tooltip-format-connected": "{num_connections} Connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias:<20.15}{device_battery_percentage:>3}%"
+    },
+    "clock": {
+        "actions": {
+            "on-click-middle": "shift_reset",
+            "on-scroll-down": "shift_up",
+            "on-scroll-up": "shift_down"
+        },
+        "calendar": {
+            "format": {
+                "today": "<span color='#ffff00'><b>{}</b></span>"
+            },
+            "mode": "year",
+            "mode-mon-col": 3
+        },
+        "format": "  {:%H:%M\n%Y-%m-%d}",
+        "locale": "C",
+        "tooltip-format": "{calendar}"
+    },
+    "ext/workspaces": {
+        "on-click": "activate",
+        "spacing": 16
+    },
+    "hyprland/window": {
+        "icon": true,
+        "icon-size": 30,
+        "max-length": 50
+    },
     "mode": "dock",
+    "modules-center": [
+        "hyprland/window"
+    ],
     "modules-left": [
         "clock",
         "ext/workspaces",
         "wlr/taskbar"
     ],
-    "modules-center": [
-        "hyprland/window"
-    ],
     "modules-right": [
         "tray",
-        "bluetooth",
         "network",
+        "bluetooth",
         "battery",
         "wireplumber",
         "backlight"
     ],
-    "hyprland/window":{
-        "icon":true,
-        "icon-size":30
-    },
-    "ext/workspaces": {
-        "spacing": 16,
-        "on-click":"activate"
-    },
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "spacing": 3,
-        "icon-size":30,
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-right": "maximize"
-    },
-    "bluetooth": {
-        "format-disabled": "󰂲",
-        "format-off": "󰂲",
-        "format-on": "󰂯",
-        "format-connected": "󰂱",
-        "tooltip-format": "Status {status}",
-        "tooltip-format-connected": "{num_connections} Connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias:<20.15}{device_battery_percentage:>3}%",
-        "on-click-middle": "exec kitty -e bluetui"
-    },
     "network": {
-        "format": "{icon}",
-        "format-ethernet": "󰈁",
+        "format": "{bandwidthUpBytes:>}\n{bandwidthDownBytes:>}",
         "format-disconnected": "󰈂",
+        "format-ethernet": "󰈁",
         "format-icons": {
             "wifi": [
                 "󰢿",
@@ -63,63 +108,19 @@
         "icon-size": 30,
         "spacing": 0
     },
-    "battery": {
-        "format": "{icon}{capacity:0>2}%",
-        "format-plugged": "󱐥{capacity:0>2}%",
-        "format-icons": {
-            "default": [
-                "󰠈",
-                "󰠉",
-                "󰠊",
-                "󰠋",
-                "󰠌",
-                "󰠍",
-                "󰠎",
-                "󰠏",
-                "󰠐",
-                "󰠇"
-            ],
-            "charging": [
-                "󰢜",
-                "󰂆",
-                "󰂇",
-                "󰂈",
-                "󰢝",
-                "󰂉",
-                "󰢞",
-                "󰂊",
-                "󰂋",
-                "󰂅"
-            ]
-        }
-    },
     "wireplumber": {
         "format": "󰕾{volume:0>2}%",
         "format-muted": "󰖁{volume:0>2}%",
-        "on-scroll-up": "exec swayosd-client --output-volume=+1",
+        "on-click-middle": "exec swayosd-client --output-volume=mute-toggle",
         "on-scroll-down": "exec swayosd-client --output-volume=-1",
-        "on-click-middle": "exec swayosd-client --output-volume=mute-toggle"
+        "on-scroll-up": "exec swayosd-client --output-volume=+1"
     },
-    "backlight": {
-        "format": "{percent:0>2}%",
-        "on-scroll-up": "exec swayosd-client --brightness=+1",
-        "on-scroll-down": "exec swayosd-client --brightness=-1"
-    },
-    "clock": {
-        "format": "  {:%H:%M\n%Y-%m-%d}",
-        "tooltip-format": "{calendar}",
-        "locale": "C",
-        "actions": {
-            "on-scroll-up": "shift_down",
-            "on-scroll-down": "shift_up",
-            "on-click-middle": "shift_reset"
-        },
-        "calendar": {
-            "mode": "year",
-            "mode-mon-col": 3,
-            "format": {
-                "today": "<span color='#ffff00'><b>{}</b></span>"
-            }
-        }
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 30,
+        "on-click": "activate",
+        "on-click-right": "maximize",
+        "spacing": 3,
+        "tooltip-format": "{title}"
     }
 }

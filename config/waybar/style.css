@@ -1,8 +1,8 @@
 * {
-	border: 0px;
-	border-radius: 0px;
 	padding: 0px;
 	font-family: monospace;
+	border: 0px;
+	border-radius: 0px;
 }
 
 tooltip {
@@ -14,18 +14,29 @@ tooltip label {
 }
 
 label.module {
-	padding: 0em 0.2em;
+	padding: 0em 0em 0em 0.2em;
 	text-shadow: +1px +1px 1px black, +1px -1px 1px black, -1px +1px 1px black, -1px -1px 1px black;
 
 }
 
-window#waybar {
-	background: transparent;
-	font-size: 26px;
-	color: white;
+label.module#network,
+label.module#battery {
+	padding: 0em;
+
 }
 
-#clock {
+label.module#bluetooth {
+	padding: 0em 0em 0em 0.1em
+}
+
+window#waybar {
+	color: white;
+	font-size: 26px;
+	background: transparent;
+}
+
+#clock,
+#network {
 	font-size: 14px;
 	font-weight: bold;
 }
