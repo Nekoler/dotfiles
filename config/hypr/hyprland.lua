@@ -117,7 +117,7 @@ hl.gesture({
 -- Bind
 hl.bind('SUPER + e', hl.dsp.exec_raw('exec kitty -e spf'))
 hl.bind('SUPER + l', hl.dsp.exec_raw('exec ${HOME}/.config/hypr/power.sh'), { long_press = true })
-hl.bind('SUPER + r', hl.dsp.exec_raw('exec wofi'))
+hl.bind('SUPER + r', hl.dsp.exec_raw('exec wofi --sort-order alphabetical'))
 hl.bind('SUPER + t', hl.dsp.exec_raw('exec kitty'))
 
 hl.bind('Print', hl.dsp.exec_raw('slurp | grim -g - - | wl-copy'))
@@ -130,8 +130,8 @@ hl.bind('XF86AudioRaiseVolume', hl.dsp.exec_raw('exec swayosd-client --output-vo
 
 hl.bind('SUPER + up', hl.dsp.focus({ direction = 'up' }))
 hl.bind('SUPER + down', hl.dsp.focus({ direction = 'down' }))
-hl.bind('SUPER + left', hl.dsp.focus({ direction = 'left' }))
-hl.bind('SUPER + right', hl.dsp.focus({ direction = 'right' }))
+hl.bind('SUPER + left', hl.dsp.layout('move -col'))
+hl.bind('SUPER + right', hl.dsp.layout('move +col'))
 hl.bind('SUPER + mouse_up', hl.dsp.layout('move -col'))
 hl.bind('SUPER + mouse_down', hl.dsp.layout('move +col'))
 hl.bind('SUPER + mouse:272', hl.dsp.window.drag(), { mouse = true })

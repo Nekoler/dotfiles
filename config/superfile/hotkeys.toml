@@ -10,7 +10,7 @@ page_down = ['pgdown']
 page_up = ['pgup']
 
 #File Panel Controls
-close_file_panel = ['w']
+close_file_panel = ['W']
 create_new_file_panel = ['n']
 next_file_panel = ['tab']
 open_sort_options_menu = ['o']
