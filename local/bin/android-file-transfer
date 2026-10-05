@@ -1,4 +1,4 @@
 #!/usr/bin/sh
-cwd=$(dirname $0)
+base=${HOME}/.local/bin
 export QT_SCALE_FACTOR=2
-exec ${cwd}/../app/AndroidFileTransfer/usr/bin/android-file-transfer
+exec ${base}/../app/AndroidFileTransfer/usr/bin/android-file-transfer

@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+base=${HOME}/.local/bin
+exec java -Xms32m -Xmx1024m -Dawt.useSystemAAFontSettings=on \
+	--add-exports java.base/java.lang=ALL-UNNAMED \
+	--add-exports java.desktop/sun.awt=ALL-UNNAMED \
+	--add-exports java.desktop/sun.java2d=ALL-UNNAMED \
+	--enable-native-access=ALL-UNNAMED -cp ${base}/../app/GeoGebra/geogebra.jar \
+	org.geogebra.desktop.GeoGebra3D --showSplash=false \
+	--settingsfile=${HOME}/.config/GeoGebra/geogebra.xml "$@"
