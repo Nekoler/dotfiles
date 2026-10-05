@@ -1,5 +1,5 @@
 editor = "nvim"
-dir_editor = "kitty"
+dir_editor = "shellhere.sh"
 auto_check_update = false
 cd_on_quit = false
 default_open_file_preview = false
@@ -40,5 +40,5 @@ enable_md5_checksum = false
 zoxide_support = false
 [open_with]
 conf = "nvim"
-toml = "nvim"
 sh = "nvim"
+toml = "nvim"
