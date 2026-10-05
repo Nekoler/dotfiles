@@ -5,4 +5,3 @@
 11-lcdfilter-default.conf
 35-lang-normalize.conf
 40-nonlatin.conf
-49-sansserif.conf
