@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0">
+  <info>
+    <title>Key</title>
+    <id>key-but-license</id>
+    <updated>2025-12-04T21:30:00+08:00</updated>
+  </info>
+  <citation>
+    <layout>
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout>
+      <text variable="license" prefix="@"/>
+    </layout>
+  </bibliography>
+</style>
