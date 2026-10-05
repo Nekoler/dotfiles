@@ -69,7 +69,7 @@
     "hyprland/window": {
         "icon": true,
         "icon-size": 30,
-        "max-length": 50
+        "max-length": 60
     },
     "mode": "dock",
     "modules-center": [
