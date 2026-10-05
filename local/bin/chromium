@@ -1,0 +1,2 @@
+#!/usr/bin/sh
+exec /usr/lib/chromium/chrome --enable-features=AcceleratedVideoEncoder "$@"
