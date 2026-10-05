@@ -1,0 +1,14 @@
+#!/usr/bin/sh
+base=${HOME}/.local/app
+
+ulimit -n 4096
+# Allow profile downgrade for Zotero
+export MOZ_ALLOW_DOWNGRADE=1
+# Don't create dedicated profile (default-esr)
+export MOZ_LEGACY_PROFILES=1
+# Use wayland backend when available
+export MOZ_ENABLE_WAYLAND=1
+
+exec ${base}/Zotero/zotero-bin -app "${base}/Zotero/app/application.ini" \
+	-datadir ${HOME}/.local/share/Zotero/data \
+	-profile ${HOME}/.local/share/Zotero/profile "$@"
