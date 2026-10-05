@@ -71,6 +71,7 @@ hl.on('hyprland.start', function()
     hl.exec_cmd('exec fcitx5 --replace')
     hl.exec_cmd('exec swayosd-server')
     hl.exec_cmd('exec systemctl --user start activate-graphical-session.target')
+    hl.exec_cmd('exec udiskie --smart-tray')
     hl.exec_cmd('exec wl-paste --watch cliphist store')
 end)
 -- Env
