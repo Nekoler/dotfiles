@@ -1,4 +1,5 @@
 {
+    "diffEditor.ignoreTrimWhitespace": false,
     "editor.codeLens": false,
     "editor.fontFamily": "Consolas,Symbols Nerd Font Mono,HarmonyOS Sans SC",
     "editor.fontSize": 18,
@@ -22,7 +23,11 @@
     "editor.unicodeHighlight.allowedLocales": {
         "zh-hans": true
     },
+    "shfmt.executableArgs": [
+        "--case-indent",
+        "--space-redirects"
+    ],
     "workbench.colorCustomizations": {
         "editorCursor.foreground": "#ffffff"
-    },
+    }
 }

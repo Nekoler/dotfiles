@@ -3,7 +3,7 @@ vim.api.nvim_set_hl(0, 'Whitespace', { fg = '#606060' })
 vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.list = true
-vim.opt.listchars = { space = '·' }
+vim.opt.listchars = { space = '·', tab = '│ ' }
 vim.opt.number = true
 vim.opt.numberwidth = 1
 vim.opt.shiftwidth = 4
