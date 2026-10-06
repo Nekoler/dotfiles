@@ -1,6 +1,6 @@
 {
     "editor.codeLens": false,
-    "editor.fontFamily": "Consolas,HarmonyOS Sans SC,Symbols Nerd Font Mono",
+    "editor.fontFamily": "Consolas,Symbols Nerd Font Mono,HarmonyOS Sans SC",
     "editor.fontSize": 18,
     "editor.inlayHints.enabled": "off",
     "editor.linkedEditing": true,

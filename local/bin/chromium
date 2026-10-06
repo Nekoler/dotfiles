@@ -1,2 +1,3 @@
 #!/usr/bin/sh
+export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/intel_icd.json
 exec /usr/lib/chromium/chrome --enable-features=AcceleratedVideoEncoder "$@"
