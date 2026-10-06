@@ -68,17 +68,16 @@
     },
     "hyprland/window": {
         "icon": true,
-        "icon-size": 30,
-        "max-length": 60
+        "icon-size": 30
     },
     "mode": "dock",
     "modules-center": [
-        "hyprland/window"
+        "ext/workspaces",
+        "wlr/taskbar"
     ],
     "modules-left": [
         "clock",
-        "ext/workspaces",
-        "wlr/taskbar"
+        "hyprland/window"
     ],
     "modules-right": [
         "tray",
