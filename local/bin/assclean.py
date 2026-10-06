@@ -1,11 +1,14 @@
 #!/usr/bin/python
-import glob
+import sys
 import pysubs2
 
-asses: list[str] = glob.glob("*.ass")
+if len(sys.argv) == 1:
+    print(sys.argv[0], 'files')
+    exit(1)
+
 keys: list[str] = ["ScriptType", "PlayResX", "PlayResY"]
 
-for ass in asses:
+for ass in sys.argv[1:]:
     sub: pysubs2.SSAFile = pysubs2.load(ass)
     sub.aegisub_project = {}
     sub.info = {i: j for i, j in sub.info.items() if i in keys}
