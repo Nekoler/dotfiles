@@ -9,16 +9,16 @@ output=$(
 		--buttons Cancel
 )
 case "${output}" in
-"Reboot")
-	exec hyprshutdown --post-cmd "systemctl reboot"
-	;;
-"Poweroff")
-	exec hyprshutdown --post-cmd "systemctl poweroff"
-	;;
-"Suspend")
-	exec systemctl suspend
-	;;
-"Logout")
-	exec hyprshutdown
-	;;
+	"Reboot")
+		exec hyprshutdown --post-cmd "systemctl reboot"
+		;;
+	"Poweroff")
+		exec hyprshutdown --post-cmd "systemctl poweroff"
+		;;
+	"Suspend")
+		exec systemctl suspend
+		;;
+	"Logout")
+		exec hyprshutdown
+		;;
 esac
