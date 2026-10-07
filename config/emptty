@@ -2,4 +2,8 @@
 Selection=true
 . /etc/profile
 . ${HOME}/.profile
+export HYPRCURSOR_SIZE=32
+export HYPRCURSOR_THEME=rose-pine-hyprcursor
+export SAL_USE_VCLPLUGIN=gtk4
+export XCURSOR_SIZE=32
 exec "$@"

@@ -74,10 +74,6 @@ hl.on('hyprland.start', function()
     hl.exec_cmd('exec udiskie --smart-tray')
     hl.exec_cmd('exec wl-paste --watch cliphist store')
 end)
--- Env
-hl.env('XCURSOR_SIZE', '32')
-hl.env('HYPRCURSOR_SIZE', '32')
-hl.env('HYPRCURSOR_THEME', 'rose-pine-hyprcursor')
 -- Permission
 hl.permission({ binary = '/usr/.+/grim', type = 'screencopy', mode = 'allow' })
 hl.permission({ binary = '/usr/.+/hyprpicker', type = 'screencopy', mode = 'allow' })
