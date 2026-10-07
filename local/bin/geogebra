@@ -6,4 +6,4 @@ exec java -Xms32m -Xmx1024m -Dawt.useSystemAAFontSettings=on \
 	--add-exports java.desktop/sun.java2d=ALL-UNNAMED \
 	--enable-native-access=ALL-UNNAMED -cp ${base}/GeoGebra/geogebra.jar \
 	org.geogebra.desktop.GeoGebra3D --showSplash=false \
-	--settingsfile=${HOME}/.config/GeoGebra/geogebra.xml "$@"
+	--settingsfile=${HOME}/.config/geogebra.ini "$@"

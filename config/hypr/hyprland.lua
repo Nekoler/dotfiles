@@ -149,14 +149,6 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = 'no-border-float',
-    match = {
-        float = true
-    },
-    border_size = 0
-})
-
-hl.window_rule({
     name = 'popup-float',
     match = {
         title = '^$|.*(?:设置|更新)$'
