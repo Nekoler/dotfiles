@@ -39,7 +39,8 @@ label.module#bluetooth {
 }
 
 #clock,
-#network {
+#network.wifi,
+#network.ethernet {
 	font-size: 14px;
 	font-weight: bold;
 }
