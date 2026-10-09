@@ -1,4 +1,4 @@
 #!/usr/bin/sh
-base=${HOME}/.local/app
+ROOT="${HOME}/.local/app/AndroidFileTransfer"
 export QT_SCALE_FACTOR=2
-exec ${base}/AndroidFileTransfer/usr/bin/android-file-transfer "$@"
+exec "${ROOT}/usr/bin/android-file-transfer" "$@"
