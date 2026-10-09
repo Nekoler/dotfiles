@@ -88,8 +88,8 @@ hl.curve('Linear', { type = 'bezier', points = { { 0.25, 0.25 }, { 0.75, 0.75 } 
 hl.curve('Quick', { type = 'bezier', points = { { 0, 0.9 }, { 0.1, 1 } } })
 hl.curve('Slow', { type = 'bezier', points = { { 0.9, 0 }, { 1, 0.1 } } })
 hl.animation({ leaf = 'border', enabled = false })
-hl.animation({ leaf = 'fadeLayers', enabled = false })
-hl.animation({ leaf = 'layers', enabled = false })
+-- hl.animation({ leaf = 'fadeLayers', enabled = false })
+-- hl.animation({ leaf = 'layers', enabled = false })
 hl.animation({ leaf = 'global', enabled = true, speed = 4, bezier = 'EaseInOut' })
 hl.animation({ leaf = 'fade', enabled = true, speed = 3, bezier = 'Slow' })
 hl.animation({ leaf = 'fadePopupsIn', enabled = true, speed = 2, bezier = 'Quick' })
@@ -114,6 +114,14 @@ hl.window_rule({
         title = '^$|.*(?:设置|更新)$'
     },
     float = true
+})
+
+hl.layer_rule({
+    name = 'wofi-no-animation',
+    match = {
+        namespace = 'wofi'
+    },
+    no_anim = true
 })
 -- Gesture
 hl.gesture({ fingers = 3, direction = "horizontal", action = "scroll_move" })
