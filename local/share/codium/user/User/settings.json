@@ -7,27 +7,26 @@
     "editor.linkedEditing": true,
     "editor.minimap.enabled": false,
     "editor.suggest.preview": true,
-    "files.insertFinalNewline": true,
-    "hediet.vscode-drawio.appearance": "automatic",
-    "hediet.vscode-drawio.theme": "kennedy",
-    "security.workspace.trust.enabled": false,
-    "terminal.integrated.cwd": "${fileDirname}",
-    "tinymist.preview.invertColors": "auto",
-    "tinymist.previewer": "myriad-dreamin.tinymist-gpu-viewer",
-    "update.mode": "none",
-    "update.showReleaseNotes": false,
-    "vscode-hanzi-counter.template.tooltipTemplateName": "zh-hans",
-    "workbench.browser.showInTitleBar": true,
-    "workbench.commandPalette.history": 0,
-    "workbench.startupEditor": "none",
     "editor.unicodeHighlight.allowedLocales": {
         "zh-hans": true
     },
+    "files.insertFinalNewline": true,
+    "hediet.vscode-drawio.appearance": "dark",
+    "hediet.vscode-drawio.theme": "kennedy",
+    "security.workspace.trust.enabled": false,
     "shfmt.executableArgs": [
         "--case-indent",
         "--space-redirects"
     ],
+    "terminal.integrated.cwd": "${fileDirname}",
+    "tinymist.preview.invertColors": "auto",
+    "update.mode": "none",
+    "update.showReleaseNotes": false,
+    "vscode-hanzi-counter.template.tooltipTemplateName": "zh-hans",
+    "workbench.browser.showInTitleBar": true,
     "workbench.colorCustomizations": {
         "editorCursor.foreground": "#ffffff"
-    }
+    },
+    "workbench.commandPalette.history": 0,
+    "workbench.startupEditor": "none"
 }
