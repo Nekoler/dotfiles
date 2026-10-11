@@ -1,6 +1,4 @@
 rd.driver.blacklist=nvidia
 rd.driver.blacklist=nvidia-drm
 rd.driver.blacklist=nvidia-modeset
-rd.driver.blacklist=nvidia-peermem
-rd.driver.blacklist=nvidia-uvm
 root=LABEL=ROOT
