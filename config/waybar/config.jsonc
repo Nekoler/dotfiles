@@ -63,8 +63,7 @@
         "tooltip-format": "{calendar}"
     },
     "ext/workspaces": {
-        "on-click": "activate",
-        "spacing": 16
+        "on-click": "activate"
     },
     "hyprland/window": {
         "icon": true,
@@ -100,12 +99,12 @@
             ]
         },
         "on-click-middle": "exec kitty -e nmtui",
-        "tooltip-format": "{bandwidthUpBytes}\n{bandwidthDownBytes}",
-        "tooltip-format-disconnected": "Disconnected"
+        "tooltip-format-disconnected": "Disconnected",
+        "tooltip-format-ethernet": "{linkSpeed}",
+        "tooltip-format-wifi": "{essid} {icon} {frequency}GHz"
     },
     "tray": {
-        "icon-size": 30,
-        "spacing": 0
+        "icon-size": 30
     },
     "wireplumber": {
         "format": "󰕾{volume:0>2}%",
@@ -119,7 +118,6 @@
         "icon-size": 30,
         "on-click": "activate",
         "on-click-right": "maximize",
-        "spacing": 3,
         "tooltip-format": "{title}"
     }
 }
