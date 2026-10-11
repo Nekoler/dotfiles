@@ -92,13 +92,13 @@ hl.animation({ leaf = 'global', enabled = true, speed = 4, bezier = 'EaseInOut' 
 hl.animation({ leaf = 'fade', enabled = true, speed = 3, bezier = 'Slow' })
 hl.animation({ leaf = 'fadePopupsIn', enabled = true, speed = 2, bezier = 'Quick' })
 hl.animation({ leaf = 'fadePopupsOut', enabled = true, speed = 2, bezier = 'Quick' })
-hl.animation({ leaf = 'layersIn', enabled = true, speed = 4, bezier = 'Quick', style = 'slide right' })
-hl.animation({ leaf = 'layersOut', enabled = true, speed = 4, bezier = 'Slow', style = 'slide right' })
+hl.animation({ leaf = 'layersIn', enabled = true, speed = 4, bezier = 'Quick', style = 'popin 0%' })
+hl.animation({ leaf = 'layersOut', enabled = true, speed = 4, bezier = 'Slow', style = 'popin 0%' })
 hl.animation({ leaf = 'windowsMove', enabled = true, speed = 5, bezier = 'EaseInOut' })
 hl.animation({ leaf = 'workspaces', enabled = true, speed = 6, bezier = 'EaseInOut', style = 'slidefadevert' })
 -- Rule
 hl.window_rule({
-    name     = 'fix-xwayland-drags',
+    name     = 'xwayland-drag-fix',
     match    = {
         class    = '^$',
         title    = '^$',
@@ -117,11 +117,19 @@ hl.window_rule({
 })
 
 hl.layer_rule({
-    name = 'wofi-no-animation',
+    name = 'layer-no-animation',
     match = {
         namespace = 'wofi|swayosd|waybar'
     },
     no_anim = true
+})
+
+hl.layer_rule({
+    name = 'mako-slide',
+    match = {
+        namespace = 'notifications'
+    },
+    animation = 'slide right'
 })
 -- Gesture
 hl.gesture({ fingers = 3, direction = "horizontal", action = "scroll_move" })
