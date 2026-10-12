@@ -1,2 +1,3 @@
-Defaults !admin_flag
-Defaults timestamp_type=global
+Defaults ! admin_flag
+Defaults env_keep = HOME
+Defaults timestamp_type = global
