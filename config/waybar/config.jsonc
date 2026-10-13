@@ -87,9 +87,8 @@
         "backlight"
     ],
     "network": {
-        "format": "{bandwidthUpBytes:>}\n{bandwidthDownBytes:>}",
-        "format-disconnected": "󰈂",
-        "format-ethernet": "󰈁",
+        "format": "󰈂",
+        "format-ethernet": "{bandwidthUpBytes:>}\n{bandwidthDownBytes:>}",
         "format-icons": {
             "wifi": [
                 "󰢿",
@@ -98,8 +97,9 @@
                 "󰢾"
             ]
         },
+        "format-wifi": "{bandwidthUpBytes:>}\n{bandwidthDownBytes:>}",
         "on-click-middle": "exec kitty -e nmtui",
-        "tooltip-format-disconnected": "Disconnected",
+        "tooltip-format": "Disconnected",
         "tooltip-format-ethernet": "{linkSpeed}",
         "tooltip-format-wifi": "{essid} {icon} {frequency}GHz"
     },

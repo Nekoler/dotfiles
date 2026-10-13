@@ -12,3 +12,10 @@ vim.opt.tabstop = 4
 vim.opt.wrap = false
 vim.keymap.set('n', 'w', ':w<CR>', { noremap = true })
 vim.keymap.set('n', 'q', ':q<CR>', { noremap = true })
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'sh' },
+    callback = function(argv)
+        vim.opt.expandtab = false
+    end
+})
