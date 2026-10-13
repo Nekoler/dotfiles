@@ -44,8 +44,7 @@ hl.config({
 
 hl.config({
     misc = {
-        force_default_wallpaper  = -1,
-        disable_hyprland_logo    = false,
+        disable_hyprland_logo    = true,
         middle_click_paste       = false,
         disable_splash_rendering = true
     }
@@ -62,7 +61,15 @@ hl.config({
 })
 
 hl.config({
-    cursor = { zoom_disable_aa = true }
+    cursor = {
+        zoom_disable_aa = true
+    }
+})
+
+hl.config({
+    render = {
+        direct_scanout = 1
+    }
 })
 
 hl.monitor({
