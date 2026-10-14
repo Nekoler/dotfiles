@@ -1,7 +1,7 @@
 {
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.codeLens": false,
-    "editor.fontFamily": "monospace",
+    "editor.fontFamily": "Consolas,HarmonyOS Sans SC,Symbols Nerd Font Mono",
     "editor.fontSize": 18,
     "editor.inlayHints.enabled": "off",
     "editor.linkedEditing": true,
