@@ -1,4 +1,3 @@
 #!/usr/bin/sh
-ROOT="${HOME}/.local/app/AndroidFileTransfer"
-export QT_SCALE_FACTOR=2
-exec "${ROOT}/usr/bin/android-file-transfer" "$@"
+export QT_SCALE_FACTOR=1.6
+exec /usr/bin/android-file-transfer "$@"
