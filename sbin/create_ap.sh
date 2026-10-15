@@ -1,52 +1,55 @@
 #!/usr/bin/sh
+GATEWAY=192.168.1.1/16
+HWMODE=g
+PASSWD=12345678w
 PHYIFACE=wlp0s20f3
+SSID=DESKTOP
 VIRTIFACE=ap0
 
+APCONFIG="
+channel=%s
+driver=nl80211
+hw_mode=%s
+interface=%s
+ssid=%s
+wpa_passphrase=%s
+wpa=3
+"
+
+DHCPCONFIG="
+bind-interfaces
+dhcp-option=3,%s
+dhcp-range=%s,%s
+interface=%s
+"
+block() {
+	trap 'break' INT
+	while true; do
+		read _
+	done
+	trap - INT
+}
 if ip link show "${PHYIFACE}" | grep "state UP mode"; then
 	iw dev "${PHYIFACE}" interface add "${VIRTIFACE}" type __ap
 	nmcli device set "${VIRTIFACE}" managed no
-	ip addr add 192.168.1.1/24 dev "${VIRTIFACE}"
+	ip addr add "${GATEWAY}" dev "${VIRTIFACE}"
 	firewall-cmd --zone=public --add-masquerade
 	firewall-cmd --zone=trusted --add-interface="${VIRTIFACE}"
 	firewall-cmd --zone=trusted --add-forward
 	CHANNEL=$(iw "${PHYIFACE}" info | grep channel | awk '{print $2}')
 
-	APCONFIG="
-channel=${CHANNEL}
-driver=nl80211
-hw_mode=g
-interface=${VIRTIFACE}
-rsn_pairwise=CCMP
-ssid=DESKTOP
-wpa_key_mgmt=WPA-PSK
-wpa_pairwise=TKIP
-wpa_passphrase=12345678w
-wpa=3
-"
+	PREFIX="${GATEWAY%.*}"
+	printf "${APCONFIG}" "${CHANNEL}" "${HWMODE}" "${VIRTIFACE}" "${SSID}" "${PASSWD}" | hostapd /dev/stdin &
+	printf "${DHCPCONFIG}" "${GATEWAY%/16}" "${PREFIX}.2" "${PREFIX}.254" "${VIRTIFACE}" | dnsmasq --conf-file=/dev/stdin --no-daemon &
 
-	DHCPCONFIG="
-bind-interfaces
-dhcp-option=3,192.168.1.1
-dhcp-range=192.168.1.2,192.168.1.254,255.255.255.0
-interface=${VIRTIFACE}
-"
-	echo "${APCONFIG}" | hostapd /dev/stdin &
-	echo "${DHCPCONFIG}" | dnsmasq --conf-file=/dev/stdin --no-daemon &
-	trap 'break' INT
-	while true; do
-		read _
-	done
-	trap - INT
+	block
+
 	killall hostapd dnsmasq 2> /dev/null
 	firewall-cmd --reload
-	ip addr del 192.168.1.1/24 dev "${VIRTIFACE}"
+	ip addr del "${GATEWAY}" dev "${VIRTIFACE}"
 	iw dev "${VIRTIFACE}" del
 else
 	nmcli connection up Hotspot
-	trap 'break' INT
-	while true; do
-		read _
-	done
-	trap - INT
+	block
 	nmcli connection down Hotspot
 fi
