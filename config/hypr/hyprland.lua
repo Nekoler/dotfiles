@@ -45,8 +45,9 @@ hl.config({
 hl.config({
     misc = {
         disable_hyprland_logo    = true,
-        middle_click_paste       = false,
-        disable_splash_rendering = true
+        disable_splash_rendering = true,
+        force_default_wallpaper  = 0,
+        middle_click_paste       = false
     }
 })
 
