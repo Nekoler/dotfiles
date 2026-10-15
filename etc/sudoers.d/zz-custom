@@ -1,3 +1,5 @@
 Defaults ! admin_flag
-Defaults env_keep = HOME
+Defaults env_keep += HOME
+Defaults env_keep += WAYLAND_DISPLAY
+Defaults env_keep += XDG_RUNTIME_DIR
 Defaults timestamp_type = global
