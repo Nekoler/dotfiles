@@ -41,7 +41,7 @@
         "format-on": "󰂯",
         "on-click-middle": "exec kitty -e bluetui",
         "tooltip-format": "Status {status}",
-        "tooltip-format-connected": "{num_connections} Connected\n\n{device_enumerate}",
+        "tooltip-format-connected": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}",
         "tooltip-format-enumerate-connected-battery": "{device_alias:<20.15}{device_battery_percentage:>3}%"
     },
@@ -87,7 +87,8 @@
         "backlight"
     ],
     "network": {
-        "format": "󰈂",
+        "format-disabled": "",
+        "format-disconnected": "󰈂",
         "format-ethernet": "{bandwidthUpBytes:>}\n{bandwidthDownBytes:>}",
         "format-icons": {
             "wifi": [
@@ -97,9 +98,12 @@
                 "󰢾"
             ]
         },
+        "format-linked": "",
         "format-wifi": "{bandwidthUpBytes:>}\n{bandwidthDownBytes:>}",
+        "interval": 2,
         "on-click-middle": "exec kitty -e nmtui",
-        "tooltip-format": "Disconnected",
+        "tooltip-format-disabled": "Disabled",
+        "tooltip-format-disconnected": "Disconnected",
         "tooltip-format-ethernet": "{linkSpeed}",
         "tooltip-format-wifi": "{essid} {icon} {frequency}GHz"
     },
