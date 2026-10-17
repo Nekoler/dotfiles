@@ -1,0 +1,4 @@
+LABEL=ROOT		/			auto	defaults	0	1
+LABEL=BOOT		/boot		auto	defaults	0	2
+LABEL=HOME		/home		auto	defaults	0	2
+LABEL=SWAP		none		auto	defaults	0	0
