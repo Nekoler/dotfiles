@@ -100,7 +100,6 @@
         },
         "format-linked": "",
         "format-wifi": "{bandwidthUpBytes:>}\n{bandwidthDownBytes:>}",
-        "interval": 2,
         "on-click-middle": "exec kitty -e nmtui",
         "tooltip-format-disabled": "Disabled",
         "tooltip-format-disconnected": "Disconnected",
