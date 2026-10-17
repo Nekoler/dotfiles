@@ -53,7 +53,7 @@
         },
         "calendar": {
             "format": {
-                "today": "<span color='#ffff00'><b>{}</b></span>"
+                "today": "<span color='#FFFF00'><b>{}</b></span>"
             },
             "mode": "year",
             "mode-mon-col": 3
