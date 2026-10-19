@@ -1,14 +1,29 @@
+* {
+    background: none;
+    border-radius: 0px;
+    border: none;
+    box-shadow: none;
+    margin: 0px;
+    padding: 0px;
+    text-shadow: none;
+}
+
+label {
+    color: white;
+}
+
 #window {
     background: rgba(0, 0, 0, 0.8);
 }
 
 #input {
-    border-radius: 0px;
-    background: transparent;
-    padding: 5px;
-    color: white;
+    padding: 0.5em;
 }
 
-#text {
-    color: white;
+#entry {
+    padding: 0.2em;
+}
+
+#entry:selected {
+    background: dodgerblue;
 }

@@ -10,6 +10,9 @@
     "editor.unicodeHighlight.allowedLocales": {
         "zh-hans": true
     },
+    "files.associations": {
+        "fonts.conf": "xml"
+    },
     "files.insertFinalNewline": true,
     "hediet.vscode-drawio.appearance": "dark",
     "hediet.vscode-drawio.theme": "kennedy",

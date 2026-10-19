@@ -1,5 +1,4 @@
 #!/usr/bin/sh
-base=$(dirname $0)
-cd ${base}
+cd $(dirname $0)
 find config -type f -exec ln -f "${HOME}/.{}" "{}" \;
 find local -type f -exec ln -f "${HOME}/.{}" "{}" \;

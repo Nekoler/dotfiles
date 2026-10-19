@@ -1,5 +1,5 @@
 #!/usr/bin/sh
-ROOT="${HOME}/.local/app/pwvucontrol"
+ROOT="${HOME}/.local/app/PwVuControl"
 export GSETTINGS_SCHEMA_DIR="${ROOT}/usr/share/glib-2.0/schemas"
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}${ROOT}/usr/lib/x86_64-linux-gnu"
 export PWVUCONTROL_LOCALEDIR="${ROOT}/usr/share/locale"
