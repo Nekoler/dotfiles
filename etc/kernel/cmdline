@@ -1,3 +1,4 @@
 rd.driver.blacklist=nvidia
+rd.driver.blacklist=nvidia-drm
 rd.driver.blacklist=nvidia-modeset
 root=LABEL=ROOT
