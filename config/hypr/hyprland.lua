@@ -127,7 +127,7 @@ hl.window_rule({
 hl.layer_rule({
     name = 'layer-no-animation',
     match = {
-        namespace = 'wofi|swayosd|waybar'
+        namespace = 'selection|swayosd|waybar|wofi'
     },
     no_anim = true
 })

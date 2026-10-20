@@ -70,7 +70,7 @@ button:hover label {
 }
 
 #tray menu {
-	background: rgba(0, 0, 0, 0.8);
+	background: black;
 }
 
 #tray menu>:hover {
