@@ -143,7 +143,7 @@ hl.layer_rule({
 hl.gesture({ fingers = 3, direction = "horizontal", action = "scroll_move" })
 hl.gesture({ fingers = 3, direction = "vertical", action = "workspace" })
 -- Bind
-hl.bind('Print', hl.dsp.exec_raw('slurp | grim -g - - | wl-copy'))
+hl.bind('Print', hl.dsp.exec_raw('pidof slurp || slurp | grim -g - - | wl-copy'))
 hl.bind('SUPER + c', hl.dsp.exec_raw('exec ${HOME}/.config/hypr/clipboard.sh'))
 hl.bind('SUPER + e', hl.dsp.exec_raw('exec kitty --class=spf -e spf'))
 hl.bind('SUPER + l', hl.dsp.exec_raw('exec ${HOME}/.config/hypr/powerctl.sh'), { long_press = true })
