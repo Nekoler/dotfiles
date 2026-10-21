@@ -27,10 +27,10 @@ hl.config({
 
 hl.config({
     decoration = {
-        shadow = {
+        blur   = {
             enabled = false
         },
-        blur   = {
+        shadow = {
             enabled = false
         }
     }
@@ -53,8 +53,10 @@ hl.config({
 
 hl.config({
     input = {
-        numlock_by_default = true,
-        touchpad           = {
+        focus_on_close         = 2,
+        follow_mouse_threshold = 600,
+        numlock_by_default     = true,
+        touchpad               = {
             natural_scroll = true,
             scroll_factor = 0.2
         }
@@ -81,9 +83,9 @@ hl.monitor({
 })
 -- Autostart
 hl.on('hyprland.start', function()
+    hl.exec_cmd('exec systemctl --user start wayland-session.target')
     hl.exec_cmd('exec fcitx5 --replace')
     hl.exec_cmd('exec swayosd-server')
-    hl.exec_cmd('exec systemctl --user start wayland-session.target')
     hl.exec_cmd('exec udiskie --smart-tray')
     hl.exec_cmd('exec wl-paste --watch cliphist store')
 end)
@@ -95,14 +97,22 @@ hl.curve('EaseInOut', { type = 'bezier', points = { { 0.7, 0 }, { 0.3, 1 } } })
 hl.curve('Linear', { type = 'bezier', points = { { 0.25, 0.25 }, { 0.75, 0.75 } } })
 hl.curve('Quick', { type = 'bezier', points = { { 0, 0.9 }, { 0.1, 1 } } })
 hl.curve('Slow', { type = 'bezier', points = { { 0.9, 0 }, { 1, 0.1 } } })
+
 hl.animation({ leaf = 'border', enabled = false })
 hl.animation({ leaf = 'global', enabled = true, speed = 4, bezier = 'EaseInOut' })
+
 hl.animation({ leaf = 'fade', enabled = true, speed = 3, bezier = 'Slow' })
-hl.animation({ leaf = 'fadePopupsIn', enabled = true, speed = 2, bezier = 'Quick' })
-hl.animation({ leaf = 'fadePopupsOut', enabled = true, speed = 2, bezier = 'Quick' })
+hl.animation({ leaf = 'fadePopups', enabled = true, speed = 2, bezier = 'Quick' })
+hl.animation({ leaf = 'fadeLayersIn', enabled = false })
+hl.animation({ leaf = 'fadeLayersOut', enabled = true, speed = 4, bezier = 'Slow' })
+
 hl.animation({ leaf = 'layersIn', enabled = true, speed = 4, bezier = 'Quick', style = 'popin 0%' })
 hl.animation({ leaf = 'layersOut', enabled = true, speed = 4, bezier = 'Slow', style = 'popin 0%' })
+
+hl.animation({ leaf = 'windowsIn', enabled = true, speed = 4, bezier = 'EaseInOut', style = 'popin 0%' })
 hl.animation({ leaf = 'windowsMove', enabled = true, speed = 5, bezier = 'EaseInOut' })
+hl.animation({ leaf = 'windowsOut', enabled = true, speed = 4, bezier = 'EaseInOut', style = 'popin 0%' })
+
 hl.animation({ leaf = 'workspaces', enabled = true, speed = 6, bezier = 'EaseInOut', style = 'slidefadevert' })
 -- Rule
 hl.window_rule({
@@ -170,10 +180,9 @@ hl.bind('SUPER + mouse:273', hl.dsp.window.resize(), { mouse = true })
 hl.bind('SUPER + Tab', hl.dsp.window.float({ action = 'toggle' }))
 hl.bind('SUPER + w', hl.dsp.window.close())
 
-for i = 0, 10 do
-    local key = i % 10
-    hl.bind('SUPER + ' .. key, hl.dsp.focus({ workspace = i }))
-    hl.bind('SUPER + SHIFT + ' .. key, hl.dsp.window.move({ workspace = i }))
+for i = 1, 9 do
+    hl.bind('SUPER + ' .. i, hl.dsp.focus({ workspace = i }))
+    hl.bind('SUPER + SHIFT + ' .. i, hl.dsp.window.move({ workspace = i }))
 end
 
 local function zoom(offset)
