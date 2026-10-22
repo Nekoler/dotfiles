@@ -37,12 +37,6 @@ hl.config({
 })
 
 hl.config({
-    animations = {
-        enabled = true
-    }
-})
-
-hl.config({
     misc = {
         disable_hyprland_logo    = true,
         disable_splash_rendering = true,
@@ -118,18 +112,27 @@ hl.animation({ leaf = 'workspaces', enabled = true, speed = 6, bezier = 'EaseInO
 hl.window_rule({
     name     = 'xwayland-drag-fix',
     match    = {
-        class    = '^$',
-        title    = '^$',
-        float    = true,
-        xwayland = true
+        initial_class = '^$',
+        initial_title = '^$',
+        float         = true,
+        xwayland      = true
     },
     no_focus = true
 })
 
 hl.window_rule({
-    name = 'popup-float',
+    name = 'no-title-float',
     match = {
-        title = '^$|.*(?:设置|更新|进度)$'
+        initial_title = '^$'
+    },
+    float = true
+})
+
+hl.window_rule({
+    name = 'Zotero-float',
+    match = {
+        initial_class = 'Zotero',
+        initial_title = '.+(置|新|度|名|件|blank)$'
     },
     float = true
 })
