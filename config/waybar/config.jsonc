@@ -58,7 +58,7 @@
             "mode": "year",
             "mode-mon-col": 3
         },
-        "format": "  {:%H:%M\n%Y-%m-%d}",
+        "format": "\u0020\u0020{:%H:%M\n%Y-%m%d}",
         "locale": "C",
         "tooltip-format": "{calendar}"
     },
