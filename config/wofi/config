@@ -1,4 +1,5 @@
 allow_images=true
 allow_markup=true
+hide_scroll=true
 no_actions=true
 show=drun
