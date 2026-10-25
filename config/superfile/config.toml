@@ -1,5 +1,5 @@
 editor = "nvim"
-dir_editor = "shellhere.sh"
+dir_editor = "term.sh"
 auto_check_update = false
 cd_on_quit = false
 default_open_file_preview = false
@@ -39,6 +39,6 @@ metadata = false
 enable_md5_checksum = false
 zoxide_support = false
 [open_with]
-conf = "nvim"
-sh = "nvim"
-toml = "nvim"
+conf = "edit.sh"
+sh = "edit.sh"
+toml = "edit.sh"
