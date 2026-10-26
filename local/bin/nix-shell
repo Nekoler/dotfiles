@@ -1,5 +1,5 @@
 #!/usr/bin/sh
 ROOT="${HOME}/.local/app/nix-shell"
 export NP_GIT=/usr/bin/git
-export NP_LOCATION=${HOME}/.local/share/nix
-exec ${ROOT} "$@"
+export NP_LOCATION="${HOME}/.local/share/nix"
+exec "${ROOT}" --option substituters false "$@"
