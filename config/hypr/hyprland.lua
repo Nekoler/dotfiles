@@ -19,7 +19,6 @@ hl.config({
             active_border   = '#007F7FFF',
             inactive_border = '#808080FF'
         },
-        allow_tearing    = true,
         resize_on_border = true,
         layout           = 'scrolling'
     }
@@ -59,6 +58,7 @@ hl.config({
 
 hl.config({
     cursor = {
+        no_hardware_cursors = 0,
         zoom_disable_aa = true
     }
 })
@@ -159,7 +159,7 @@ hl.gesture({ fingers = 3, direction = "vertical", action = "workspace" })
 hl.bind('Print', hl.dsp.exec_raw('! pidof slurp && i=$(slurp) && echo "${i}" | grim -g - - | wl-copy'))
 hl.bind('SUPER + c', hl.dsp.exec_raw('i=$(cliphist list | wofi --dmenu) && echo "${i}" | cliphist decode | wl-copy'))
 hl.bind('SUPER + e', hl.dsp.exec_raw('exec kitty --class=spf -e spf'))
-hl.bind('SUPER + l', hl.dsp.exec_raw('exec "${HOME}/.config/hypr/powerctl.sh"'), { long_press = true })
+hl.bind('SUPER + l', hl.dsp.exec_raw('. "${HOME}/.config/hypr/powerctl.sh"'), { long_press = true })
 hl.bind('SUPER + r', hl.dsp.exec_raw('exec wofi'))
 hl.bind('SUPER + t', hl.dsp.exec_raw('exec kitty'))
 hl.bind('SUPER + XF86AudioLowerVolume', hl.dsp.exec_raw('exec swayosd-client --brightness=-1'), { repeating = true })
