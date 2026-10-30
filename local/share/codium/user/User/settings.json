@@ -15,7 +15,6 @@
     },
     "files.insertFinalNewline": true,
     "hediet.vscode-drawio.appearance": "dark",
-    "hediet.vscode-drawio.theme": "kennedy",
     "security.workspace.trust.enabled": false,
     "shfmt.executableArgs": [
         "--case-indent",
@@ -23,10 +22,8 @@
     ],
     "terminal.integrated.cwd": "${fileDirname}",
     "tinymist.preview.invertColors": "auto",
-    "update.mode": "none",
     "update.showReleaseNotes": false,
     "vscode-hanzi-counter.template.tooltipTemplateName": "zh-hans",
-    "workbench.browser.showInTitleBar": true,
     "workbench.colorCustomizations": {
         "editorCursor.foreground": "#ffffff"
     },
