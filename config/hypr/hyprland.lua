@@ -85,7 +85,7 @@ hl.on('hyprland.start', function()
 end)
 -- Permission
 hl.permission({ binary = '/usr/bin/grim', type = 'screencopy', mode = 'allow' })
-hl.permission({ binary = '/usr/libexec/xdg-desktop-portal-.+', type = 'screencopy', mode = 'allow' })
+hl.permission({ binary = '/usr/libexec/xdg-desktop-portal-wlr', type = 'screencopy', mode = 'allow' })
 -- Animation
 hl.curve('EaseInOut', { type = 'bezier', points = { { 0.7, 0 }, { 0.3, 1 } } })
 hl.curve('Linear', { type = 'bezier', points = { { 0.25, 0.25 }, { 0.75, 0.75 } } })

@@ -24,7 +24,7 @@ button:hover label {
 }
 
 .modules-left .module {
-	padding: 0em 0.2em 0em 0em;
+	padding: 0em 0.3em 0em 0em;
 }
 
 .modules-right .module {
@@ -37,12 +37,15 @@ button:hover label {
 }
 
 #bluetooth {
-	padding: 0em 0em 0em 0.1em
+	padding: 0em 0em 0em 0.1em;
+}
+
+#window image {
+	margin-right: -0.3em;
 }
 
 #window label {
 	font-family: sans-serif;
-	margin-left: -0.3em;
 }
 
 #clock,
