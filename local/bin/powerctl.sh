@@ -1,12 +1,9 @@
 #!/usr/bin/sh
 output=$(
 	hyprland-dialog --title "Power Control" \
+		--apptitle "Power Control for Hyprland" \
 		--text "Select an Operation" \
-		--buttons Reboot \
-		--buttons Poweroff \
-		--buttons Suspend \
-		--buttons Logout \
-		--buttons Cancel
+		--buttons "Reboot;Poweroff;Suspend;Logout;Cancel"
 )
 case "${output}" in
 	"Reboot")

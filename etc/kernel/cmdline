@@ -2,3 +2,4 @@ rd.driver.blacklist=nvidia
 rd.driver.blacklist=nvidia-drm
 rd.driver.blacklist=nvidia-modeset
 root=LABEL=ROOT
+video=2560x1440@60
