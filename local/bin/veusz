@@ -1,0 +1,3 @@
+#!/usr/bin/sh
+ROOT="${HOME}/.local/app/Veusz"
+exec "${ROOT}/veusz" --translation="${HOME}/.config/veusz.org/locale.qm" "$@"

@@ -129,6 +129,15 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    name = 'Veusz-splash-float',
+    match = {
+        initial_class = 'veusz',
+        initial_title = 'veusz'
+    },
+    float = true
+})
+
+hl.window_rule({
     name = 'Zotero-float',
     match = {
         initial_class = 'Zotero',

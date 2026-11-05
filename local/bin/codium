@@ -1,4 +1,4 @@
 #!/usr/bin/sh
 ROOT="${HOME}/.local/app/VSCodium"
 export ELECTRON_RUN_AS_NODE=1
-exec ${ROOT}/codium ${ROOT}/resources/app/out/cli.js --user-data-dir="${HOME}/.local/share/codium/user" "$@"
+exec "${ROOT}/codium" "${ROOT}/resources/app/out/cli.js" --user-data-dir="${HOME}/.local/share/codium/user" "$@"
