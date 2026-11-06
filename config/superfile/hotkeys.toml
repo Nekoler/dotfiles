@@ -1,7 +1,7 @@
 #Basic Actions
 confirm = ['enter', 'right']
 cd_quit = ['Q']
-quit = ['q']
+quit = ['ctrl+q']
 
 #Navigation
 list_down = ['down']
