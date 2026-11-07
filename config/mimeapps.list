@@ -1,0 +1,9 @@
+[Default Applications]
+application/pdf=chromium.desktop
+image/svg+xml=chromium.desktop
+inode/directory=spf.desktop
+text/html=chromium.desktop
+x-scheme-handler/about=chromium.desktop
+x-scheme-handler/http=chromium.desktop
+x-scheme-handler/https=chromium.desktop
+x-scheme-handler/unknown=chromium.desktop
