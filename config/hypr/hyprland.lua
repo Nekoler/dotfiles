@@ -112,8 +112,8 @@ hl.animation({ leaf = 'workspaces', enabled = true, speed = 6, bezier = 'EaseInO
 hl.window_rule({
     name     = 'xwayland-drag-fix',
     match    = {
-        initial_class = '^$',
-        initial_title = '^$',
+        initial_class = '',
+        initial_title = '',
         float         = true,
         xwayland      = true
     },
@@ -123,7 +123,7 @@ hl.window_rule({
 hl.window_rule({
     name = 'no-title-float',
     match = {
-        initial_title = '^$'
+        initial_title = ''
     },
     float = true
 })
@@ -138,10 +138,10 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = 'Zotero-float',
+    name = 'Zotero-popup-float',
     match = {
         initial_class = 'Zotero',
-        initial_title = '.+(置|新|度|名|件|blank)$'
+        initial_title = '.+(置|新|度|名|件|blank)'
     },
     float = true
 })
