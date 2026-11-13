@@ -1,2 +1,2 @@
 #!/usr/bin/sh
-exec kitty --detach --directory="$@"
+exec kitty --single-instance --detach --directory="$@"

@@ -1,2 +1,2 @@
 #!/usr/bin/sh
-exec kitty --class=nvim -e nvim "$@"
+exec kitty --single-instance --class=nvim -e nvim "$@"
