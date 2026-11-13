@@ -199,7 +199,9 @@ end
 
 local function zoom(offset)
     local current = hl.get_config('cursor.zoom_factor')
-    current = math.max(1.0, current * offset)
+    current = current * offset
+    current = math.max(1.0, current)
+    current = math.min(10.0, current)
     hl.config({ cursor = { zoom_factor = current } })
 end
 hl.bind('SUPER + SHIFT + mouse_up', function() zoom(1.5) end)
