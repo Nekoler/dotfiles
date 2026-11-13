@@ -40,5 +40,7 @@ enable_md5_checksum = false
 zoxide_support = false
 [open_with]
 conf = "edit.sh"
+mkv = "mpv"
+mp4 = "mpv"
 sh = "edit.sh"
 toml = "edit.sh"
