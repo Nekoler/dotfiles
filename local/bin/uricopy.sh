@@ -4,7 +4,7 @@ if [ $# -eq 0 ]; then
 	exit 1
 fi
 urilist=""
-for i in "$@"; do
+for i in "${@}"; do
 	urilist="${urilist}file://${PWD}/${i}\n"
 done
 echo -n "${urilist}" | wl-copy --type text/uri-list

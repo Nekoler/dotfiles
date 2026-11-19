@@ -5,4 +5,4 @@ export MOZ_LEGACY_PROFILES=1
 export MOZ_ENABLE_WAYLAND=1
 exec "${ROOT}/zotero-bin" -app "${ROOT}/app/application.ini" \
 	-datadir "${HOME}/.local/share/Zotero/data" \
-	-profile "${HOME}/.local/share/Zotero/profile" "$@"
+	-profile "${HOME}/.local/share/Zotero/profile" "${@}"
