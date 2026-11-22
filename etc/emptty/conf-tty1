@@ -1,1 +1,2 @@
 DEFAULT_USER=master
+NO_XDG_FALLBACK=true
