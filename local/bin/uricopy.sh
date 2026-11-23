@@ -1,5 +1,5 @@
 #!/usr/bin/sh
-if [ $# -eq 0 ]; then
+if [ "${#}" -eq 0 ]; then
 	echo "Empty, No copy."
 	exit 1
 fi
