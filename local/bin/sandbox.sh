@@ -1,17 +1,8 @@
 #!/usr/bin/sh
-[ ! -d /tmp/sandbox ] && mkdir /tmp/sandbox /tmp/sandbox/run /tmp/sandbox/tmp
-[ ! -d "${HOME}/.local/share/sandbox/${HOME}" ] &&
-	mkdir "${HOME}/.local/share/sandbox/${HOME}" &&
-	cp "${HOME}/.bashrc" "${HOME}/.local/share/sandbox/${HOME}" &&
-	cp "${HOME}/.profile" "${HOME}/.local/share/sandbox/${HOME}"
-
-exec bwrap --unshare-pid --clearenv \
-	--setenv HOME "${HOME}" --setenv LANG "${LANG}" --setenv TERM xterm-256color \
-	--bind "${HOME}/.local/share/sandbox" / \
-	--dev-bind /dev /dev --proc /proc \
-	--bind /sys /sys \
-	--bind /tmp/sandbox/run /run \
-	--bind /tmp/sandbox/tmp /tmp \
-	--ro-bind /etc/passwd /etc/passwd \
-	--ro-bind /etc/resolv.conf /etc/resolv.conf \
-	--chdir "${HOME}" /usr/bin/bash --login
+[ -d /tmp/sandbox ] || mkdir /tmp/sandbox /tmp/sandbox/run /tmp/sandbox/tmp
+exec env --ignore-environment HOME=/root "LANG=${LANG}" TERM=xterm-256color \
+	"${HOME}/.local/bin/proot" --root-id \
+	--rootfs="${HOME}/.local/share/sandbox" \
+	--cwd=/root --bind=/dev --bind=/proc --bind=/sys \
+	--bind=/tmp/sandbox/tmp:/tmp --bind=/tmp/sandbox/run:/run \
+	--bind=/etc/resolv.conf /usr/bin/bash --login
