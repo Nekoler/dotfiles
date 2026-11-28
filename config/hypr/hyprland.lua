@@ -73,7 +73,8 @@ hl.monitor({
     output   = '',
     mode     = '2560x1440@60',
     position = 'auto',
-    scale    = 'auto'
+    scale    = 'auto',
+    vrr      = 1
 })
 -- Autostart
 hl.on('hyprland.start', function()
