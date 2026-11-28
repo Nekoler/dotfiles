@@ -166,8 +166,8 @@ hl.layer_rule({
 hl.gesture({ fingers = 3, direction = "horizontal", action = "scroll_move" })
 hl.gesture({ fingers = 3, direction = "vertical", action = "workspace" })
 -- Bind
-hl.bind('Print', hl.dsp.exec_raw('! pidof slurp && i=$(slurp) && echo "${i}" | grim -g - - | wl-copy'))
-hl.bind('Super + c', hl.dsp.exec_raw('! pidof wofi && i=$(cliphist list | wofi --dmenu) && echo "${i}" | cliphist decode | wl-copy'))
+hl.bind('Print', hl.dsp.exec_raw('! pidof slurp && i="$(slurp)" && echo "${i}" | grim -g - - | wl-copy'))
+hl.bind('Super + c', hl.dsp.exec_raw('! pidof wofi && i="$(cliphist list | wofi --dmenu)" && echo "${i}" | cliphist decode | wl-copy'))
 hl.bind('Super + e', hl.dsp.exec_raw('exec kitty --single-instance --class=spf -e spf'))
 hl.bind('Super + l', hl.dsp.exec_raw('pidof hyprland-dialog || . "${HOME}/.local/bin/powerctl.sh"'), { long_press = true })
 hl.bind('Super + r', hl.dsp.exec_raw('pidof wofi || exec wofi'))

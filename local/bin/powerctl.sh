@@ -1,10 +1,10 @@
 #!/usr/bin/sh
-output=$(
+output="$(
 	hyprland-dialog --title "Power Control" \
 		--apptitle "Power Control for Hyprland" \
 		--text "Select an Operation" \
 		--buttons "Reboot;Poweroff;Suspend;Logout;Cancel"
-)
+)"
 case "${output}" in
 	"Reboot")
 		exec hyprshutdown --post-cmd "exec systemctl reboot"
